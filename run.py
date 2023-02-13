@@ -20,4 +20,24 @@ def print_board(board):
         print("%d|%s|" % (row_num, "|".join(row)))
         row_num += 1
 
+"""
+Function to allow player to set 5 ships in any place on the board
 
+"""
+def create_ships(board):
+    print("Welcome to Battleships Game \nPlace Your 5 ships...")
+    ships = 0
+    while ships < 5:
+        row, column = int(input("Enter a number: 1 - 8\n"))-1
+        board[row][column] = 'O'
+        ships += 1
+        print_board(board)
+        print(f"You have placed {ships} ships")
+    input("Ships set!\nPress any key to start!")
+    return board
+
+
+def play_game():
+    create_ships(player_game_board)
+
+play_game()
