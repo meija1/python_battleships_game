@@ -160,6 +160,12 @@ def play_game():
         print("Computer Board")
         comp_turn(player)
         print("Player Board")
+        if check_winner(hidden_board) == 5:
+            print("You Won!")
+            break
+        elif check_winner(player) == 5:
+            print("Computer Won!")
+            break
 
 
 play_game()
