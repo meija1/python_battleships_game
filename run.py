@@ -13,6 +13,8 @@ Create a function to style the game board by passing a variable board
 Print numbers horizontally and vertically
 Finally print vertical lines and implement rows by 1
 """
+
+
 def print_board(board):
     print('  1 2 3 4 5 6 7 8')
     row_num = 1
@@ -20,12 +22,15 @@ def print_board(board):
         print("%d|%s|" % (row_num, "|".join(row)))
         row_num += 1
 
+
 """
 Function to allow player to set 5 ships in any place on the board
 Welcome message for the game, input method to place rows and columns
 update the player on how many ships have been placed and return board
 with the player ships on it.
 """
+
+
 def create_ships(board):
     print("Welcome to Battleships Game \nPlace Your 5 ships...")
     ships = 0
@@ -45,6 +50,8 @@ Computer makes 5 ships using the randint function and sets an X
 in it's place if it's not been set there already, and returns the
 board with the placed ships.
 """
+
+
 def create_computer_ships(board):
     for ships in range(5):
         row = randint(0, 7)
