@@ -84,7 +84,9 @@ def guess():
 
 
 """
-
+Allow user to guess computer ship positions on the board
+Check for already guessed and hit positions marking them
+with spcific characters and update the hidden board.
 """
 
 
