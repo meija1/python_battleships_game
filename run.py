@@ -22,7 +22,9 @@ def print_board(board):
 
 """
 Function to allow player to set 5 ships in any place on the board
-
+Welcome message for the game, input method to place rows and columns
+update the player on how many ships have been placed and return board
+with the player ships on it.
 """
 def create_ships(board):
     print("Welcome to Battleships Game \nPlace Your 5 ships...")
@@ -37,7 +39,25 @@ def create_ships(board):
     return board
 
 
+"""
+Function to make computer ships on the board in random places
+Computer makes 5 ships using the randint function and sets an X
+in it's place if it's not been set there already, and returns the
+board with the placed ships.
+"""
+def create_computer_ships(board):
+    for ships in range(5):
+        row = randint(0, 7)
+        column = randint(0, 7)
+        while board[row][column] == 'X':
+            row = randint(0, 7)
+            column = randint(0, 7)
+        board[row][column] = 'X'
+    return board
+
+
 def play_game():
     create_ships(player_game_board)
+
 
 play_game()
