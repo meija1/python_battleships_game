@@ -83,6 +83,26 @@ def guess():
             print("Must be a number")
 
 
+"""
+
+"""
+
+
+def player_turn(board):
+    while True:
+        row, column = guess()
+        if hidden_board[row][column] == 'X' or hidden_board[row][column] == '-':
+            print("It's already been hit")
+        elif board[row][column] == 'X':
+            hidden_board[row][column] = 'X'
+            print("it's a hit!")
+        else:
+            print("Missed!")
+            hidden_board[row][column] = '-'
+        print_board(hidden_board)
+        break
+
+
 def play_game():
     create_ships(player_game_board)
 
