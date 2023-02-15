@@ -129,6 +129,20 @@ def comp_turn(board):
         break
 
 
+"""
+Function to count how many X characters is in a list
+by passing the board variable trough it
+and returns the total count.
+"""
+
+
+def check_winner(board):
+    total = 0
+    for x in board:
+        total += x.count('X')
+    return total
+
+
 def play_game():
     create_ships(player_game_board)
 
