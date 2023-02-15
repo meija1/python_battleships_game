@@ -1,7 +1,7 @@
 from random import randint
 
 """
-Create base for 8 by 8 boards for player, computer 
+Create base for 8 by 8 boards for player, computer
 and a hidden overlay one for computer.
 """
 player_game_board = [[" "] * 8 for _ in range(8)]
@@ -35,7 +35,7 @@ def create_ships(board):
     print("Welcome to Battleships Game \nPlace Your 5 ships...")
     ships = 0
     while ships < 5:
-        row, column = int(input("Enter a number: 1 - 8\n"))-1
+        row, column = guess()
         board[row][column] = 'O'
         ships += 1
         print_board(board)
@@ -61,6 +61,26 @@ def create_computer_ships(board):
             column = randint(0, 7)
         board[row][column] = 'X'
     return board
+
+
+"""
+Create an input function for the player to be able to
+either set ships on the board and guess the opponents placed
+ships.
+"""
+
+
+def guess():
+    while True:
+        try:
+            row = int(input("Enter a row number: 1 - 8\n"))-1
+            column = int(input("Enter a column number: 1 - 8\n"))-1
+            if row in range(0, 8) and column in range(0, 8):
+                return row, column
+            else:
+                print("Enter a valid number")
+        except ValueError:
+            print("Must be a number")
 
 
 def play_game():
