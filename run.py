@@ -154,7 +154,7 @@ the game is over by the player who finds them first.
 def play_game():
     player = create_ships(player_game_board)
     computer = create_computer_ships(computer_game_board)
-    print("Let's Play Battleships!")
+    print("______________________\nLet's Play Battleships!")
     while True:
         player_turn(computer)
         print("Computer Board")
