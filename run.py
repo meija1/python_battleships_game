@@ -105,6 +105,30 @@ def player_turn(board):
         break
 
 
+"""
+Computer turn function selects a random spot on players board
+and places the specific character depending if it already
+contains them, updates and returns the players board.
+"""
+
+
+def comp_turn(board):
+    while True:
+        row = randint(0, 7)
+        column = randint(0, 7)
+        if board[row][column] == 'X' or board[row][column] == '-':
+            row = randint(0, 7)
+            column = randint(0, 7)
+        elif board[row][column] == 'O':
+            board[row][column] = 'X'
+            print("Computer hit!")
+        else:
+            board[row][column] = '-'
+            print("Computer missed!")
+        print_board(board)
+        break
+
+
 def play_game():
     create_ships(player_game_board)
 
