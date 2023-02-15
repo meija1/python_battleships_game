@@ -143,8 +143,23 @@ def check_winner(board):
     return total
 
 
+"""
+The main play game function creates both players boards,
+loops trough each players turns until a condition is met.
+When check winner method returns 5 counted X characters
+the game is over by the player who finds them first.
+"""
+
+
 def play_game():
-    create_ships(player_game_board)
+    player = create_ships(player_game_board)
+    computer = create_computer_ships(computer_game_board)
+    print("Let's Play Battleships!")
+    while True:
+        player_turn(computer)
+        print("Computer Board")
+        comp_turn(player)
+        print("Player Board")
 
 
 play_game()
